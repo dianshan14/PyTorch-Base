@@ -1,0 +1,27 @@
+_default: !include ./base.yml
+
+datset: cifar10 # cifar10, cifar100
+datset_dir: ./
+data_loader_workers: 4
+
+
+image_size: 32
+topk: [1, 5]
+num_epochs: 100
+
+optimizer: sgd
+momentum: 0.9
+weight_decay: 1e-5
+
+scheduler: cosine
+
+label_smoothing: 0
+
+log_interval: 00
+log_path: ./logs/logger
+tensorboard_log_path: ./logs/tb
+
+pretrained: ""
+resume: ""
+
+random_seed: 42
