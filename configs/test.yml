@@ -1,8 +1,8 @@
 _default: !include ./base.yml
 
-datset: cifar10 # cifar10, cifar100
-datset_dir: ./
-data_loader_workers: 4
+dataset: cifar10 # cifar10, cifar100
+dataset_dir: ./
+num_workers: 4
 
 
 image_size: 32
@@ -12,6 +12,7 @@ num_epochs: 100
 optimizer: sgd
 momentum: 0.9
 weight_decay: 1e-5
+batch_size: 200
 
 scheduler: cosine
 

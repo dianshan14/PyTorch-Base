@@ -94,14 +94,14 @@ class Config(AttrDict):
         super(Config, self).__init__(cfg_dict)
 
 
-def get_config():
+def get_config(cfg_path):
+    CONFIG = Config(cfg_path)
+    return CONFIG
+
+if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--cfg-path", type=str, help="path to the config file")
     args = parser.parse_args()
 
-    CONFIG = Config(args.cfg_path)
-    return CONFIG
-
-if __name__ == "__main__":
-    CONFIG = get_config()
+    CONFIG = get_config(args.cfg_path)
     print(CONFIG)
